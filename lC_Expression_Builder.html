@@ -1,0 +1,66 @@
+<template>
+  <section class="expression-builder">
+    <h1 class="title">Conditions</h1>
+    <lightning-combobox
+      class="logic"
+      label="Take Action When"
+      value={logicValue}
+      options={logicOptions}
+      onchange={handleLogicChange}
+    >
+    </lightning-combobox>
+    <div class="conditions">
+      <template for:each={conditions} for:item="condition" for:index="index">
+        <div
+          data-index={index}
+          onchange={handleChange}
+          key={condition.key}
+          class="condition"
+        >
+          <div class="condition__number">{index}</div>
+          <lightning-combobox
+            label="Field"
+            name="field"
+            value={condition.field}
+            options={fields}
+          >
+          </lightning-combobox>
+          <lightning-combobox
+            label="Operator"
+            name="operator"
+            value={condition.operator}
+            options={operatorOptions}
+          >
+          </lightning-combobox>
+          <lightning-input
+            type="text"
+            name="value"
+            value={condition.value}
+            label="Value"
+          ></lightning-input>
+          <lightning-button-icon
+            data-index={index}
+            icon-name="utility:delete"
+            title="Delete"
+            onclick={handleDelete}
+          ></lightning-button-icon>
+        </div>
+      </template>
+    </div>
+    <lightning-button
+      class="btn"
+      icon-name="utility:add"
+      label="Add condition"
+      onclick={handleAddCondition}
+    ></lightning-button>
+    <template if:true={isCustomLogic}>
+      <lightning-input
+        class="custom-logic-input"
+        type="text"
+        label="Logic"
+        value={customLogic}
+        onchange={handleCustomLogicChange}
+      ></lightning-input>
+    </template>
+  </section>
+</template>

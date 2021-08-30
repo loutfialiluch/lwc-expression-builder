@@ -1,0 +1,59 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.expression-builder {
+  width: 100%;
+  background: #ffffff;
+  border: 1.5px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.expression-builder > .logic {
+  width: 15.6rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.expression-builder > .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.expression-builder > .conditions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.expression-builder > .conditions > .condition {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.8rem;
+}
+
+.expression-builder > .conditions > .condition > .condition__number {
+  width: 30px;
+  height: 30px;
+  background-color: #0176d3;
+  color: #ffffff;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2rem;
+}
+
+.expression-builder > .custom-logic-input {
+  margin-top: 0.5rem;
+}
+
+.expression-builder > .btn {
+  margin-top: 1rem;
+  display: inline-block;
+}
